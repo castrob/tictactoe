@@ -71,6 +71,8 @@ class Sala implements Runnable {
   PrintStream printStreamPlayer1;
   PrintStream printStreamPlayer2;
 
+  int lastPlayer;
+
   public Sala (InputStream inputStreamPlayer1, PrintStream printStreamPlayer1,
    InputStream inputStreamPlayer2, PrintStream printStreamPlayer2) {
 
@@ -84,6 +86,13 @@ class Sala implements Runnable {
   public void run () {
     player1.start();
     player2.start();
+  }
+
+  public synchronized void play(String msg, int player){
+    if(lastPlayer != player){
+      distribuiMensagem(msg + " " + player);
+      lastPlayer = player;
+    }
   }
 
   public void distribuiMensagem(String msg) {
@@ -107,8 +116,9 @@ class Player extends Thread {
 
     Scanner s = new Scanner(this.inputStream);
     while (s.hasNextLine()) {
-      sala.distribuiMensagem(s.nextLine());
+      sala.play(s.nextLine(), this.player);
     }
+    
     s.close();
 
   }
