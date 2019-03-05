@@ -74,13 +74,13 @@ public class TicTacToe {
     public String checkWinner(){
         String result = "";
         if(checkLinesAndColumns(playerA)){
-            result =  "Player 1 Winner!";
+            result =  "Player One Winner!";
         }else if (checkLinesAndColumns(playerB)){
-            result = "Player 2 Winner!";
+            result = "Player Two Winner!";
         }else if(checkDiagonals(playerA)){
-            result = "Player 1 Winner!";
+            result = "Player One Winner!";
         }else if(checkDiagonals(playerB)){
-            result = "Player 2 Winner!";
+            result = "Player Two Winner!";
         }else if(checkTie()){
             return "Tie!";
         }
@@ -156,35 +156,48 @@ public class TicTacToe {
                + this.board[2][0] + " | " + this.board[2][1] + " | " + this.board[2][2] + "\n";
     }
 
+    public String gameInstructions(){
+        return "Welcome to a Tic Tac Toe Game !\n" + 
+               "To play this game, just simply write x,y where x is the line and y the column you want do mark.\n" +
+               "here are the game board!\n" +
+               "0,0 | 0,1 | 0,2  \n" + 
+               "---------------- \n" +
+               "1,0 | 1,1 | 1,2  \n" +
+               "---------------- \n" +
+               "2,0 | 2,1 | 2,2  \n" +
+               "Player one is '" + this.playerA + "' and Player 2 is '" + this.playerB + "' \n" + 
+               "Player one starts the game! Have Fun!! =]";
+    }
+
 
     /**
      * Main para casos de Testes. comentar no final.
      */
-    public static void main(String[] args)throws IOException{
-        TicTacToe game = new TicTacToe('x','o', 0);
-        BufferedReader p1 = new BufferedReader(new InputStreamReader(System.in));
-        String result;
-        int x,y;
-        int player1 = 1;
-        int player2 = 2;
-        int current = 1;
-        int lastPlayer = 2;
-        int temp;
-        while((result = game.checkWinner()).equals("")){
-            if(current != lastPlayer){
-                x = Integer.parseInt(p1.readLine());
-                y = Integer.parseInt(p1.readLine());
-                while(!game.play(x, y, current)){
-                    System.out.println("Invalid Position! Try again!");
-                    x = Integer.parseInt(p1.readLine());
-                    y = Integer.parseInt(p1.readLine());
-                }
-                temp = current;
-                current = lastPlayer;
-                lastPlayer = temp;
-            }
-            System.out.println(game);
-        }
-        System.out.println(result);
-    }
+    // public static void main(String[] args)throws IOException{
+    //     TicTacToe game = new TicTacToe('x','o', 0);
+    //     BufferedReader p1 = new BufferedReader(new InputStreamReader(System.in));
+    //     String result;
+    //     int x,y;
+    //     int player1 = 1;
+    //     int player2 = 2;
+    //     int current = 1;
+    //     int lastPlayer = 2;
+    //     int temp;
+    //     while((result = game.checkWinner()).equals("")){
+    //         if(current != lastPlayer){
+    //             x = Integer.parseInt(p1.readLine());
+    //             y = Integer.parseInt(p1.readLine());
+    //             while(!game.play(x, y, current)){
+    //                 System.out.println("Invalid Position! Try again!");
+    //                 x = Integer.parseInt(p1.readLine());
+    //                 y = Integer.parseInt(p1.readLine());
+    //             }
+    //             temp = current;
+    //             current = lastPlayer;
+    //             lastPlayer = temp;
+    //         }
+    //         System.out.println(game);
+    //     }
+    //     System.out.println(result);
+    // }
 }
