@@ -10,6 +10,8 @@ Tic Tac Toe game implemented with client server socket programming for multiples
 git clone https://github.com/castrob/tictactoe.git
 
 cd tictactoe
+
+cd src (to access the source code file)
 ``````
 
 2. Compile All .java Files
@@ -32,7 +34,6 @@ javac Tictactoe.java
 
 ``````
 java Server
-
 ``````
 
 
@@ -41,7 +42,6 @@ java Server
     
 ``````
 java Client
-
 ``````
     
 
