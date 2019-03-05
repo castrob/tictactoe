@@ -11,7 +11,7 @@ git clone https://github.com/castrob/tictactoe.git
 
 cd tictactoe
 
-cd src (to access the source code file)
+cd src (to access the source code folder)
 ``````
 
 2. Compile All .java Files
