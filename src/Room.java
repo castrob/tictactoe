@@ -84,10 +84,10 @@ class Room implements Runnable {
                     broadcastMessage("\n" + game);
                     broadcastMessage("Its Player " + ((player) == 1 ? "Two" : "One") + " turn!");
                 }
+            }else{
+                //Jogo já acabou. 
+                broadcastMessage(result + "\n" + game);
             }
-        }else{
-            //Jogo já acabou. 
-            broadcastMessage(result + "\n" + game);
         }
     }
 

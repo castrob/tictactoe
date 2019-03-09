@@ -15,7 +15,7 @@ public class Server {
 
   public static void main(String[] args) throws IOException {
     // inicia o servidor
-    new Server(8080).init();
+    new Server(8000).init();
   }
 
   //Server Port and Client List

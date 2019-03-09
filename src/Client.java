@@ -13,7 +13,7 @@ import java.util.Scanner;
 public class Client {
   public static void main(String[] args) throws UnknownHostException, IOException {
     // dispara cliente
-    new Client("127.0.0.1", 8080).init();
+    new Client("186.206.235.71", 8000).init();
   }
 
   //Informações de Conexão do Servidor
